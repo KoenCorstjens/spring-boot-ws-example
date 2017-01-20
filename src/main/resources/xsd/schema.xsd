@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema targetNamespace="www.corstjens.eu/users"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="www.corstjens.eu/users">
+
+    <xs:element name="getUserByIDRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="userId" type="tns:userIdType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserByIDResponse">
+        <xs:complexType>
+           <xs:sequence>
+               <xs:element name="userId" type="tns:user"/>
+           </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:simpleType name="userIdType">
+        <xs:restriction base="xs:string">
+            <xs:length value="5"/>
+            <xs:pattern value="[0-9]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="userId" type="tns:userIdType"/>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="gsm" type="xs:string"/>
+        </xs:sequence>
+
+    </xs:complexType>
+</xs:schema>
