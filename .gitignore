@@ -22,7 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-.gitignore
 .mvn/
 mvnw
 mvnw.cmd
