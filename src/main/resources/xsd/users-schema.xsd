@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xs:schema targetNamespace="www.corstjens.eu/users"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:tns="www.corstjens.eu/users">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="www.corstjens.eu/schema/users"
+           targetNamespace="www.corstjens.eu/schema/users">
 
     <xs:element name="getUserByIDRequest">
         <xs:complexType>
@@ -13,9 +13,9 @@
 
     <xs:element name="getUserByIDResponse">
         <xs:complexType>
-           <xs:sequence>
-               <xs:element name="userId" type="tns:user"/>
-           </xs:sequence>
+            <xs:sequence>
+                <xs:element name="user" type="tns:user"/>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 
@@ -36,6 +36,5 @@
             <xs:element name="email" type="xs:string"/>
             <xs:element name="gsm" type="xs:string"/>
         </xs:sequence>
-
     </xs:complexType>
 </xs:schema>
